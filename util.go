@@ -1,5 +1,5 @@
 /*
-** Copyright (C) 2023 - Champ Clark III <dabeave _AT_ gmail.com>
+** Copyright (C) 2023-2024 - Champ Clark III <cclark _AT_ k9.io>
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License Version 2 as
