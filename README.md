@@ -16,6 +16,7 @@ In the "etc" directory is the "config.json" file.  This holds the settings that 
   "api_key": "YOUR_PROXY_SERVICE_API_KEY",
 
   "http_listen": ":8443",
+  "http_tls": true,
   "http_cert": "/etc/letsencrypt/live/YOURSITE/fullchain.pem",
   "http_key": "/etc/letsencrypt/live/YOURSITE/privkey.pem",
   "http_mode": "release",
