@@ -1,0 +1,22 @@
+{
+  "api_key": "YOUR_PROXY_SERVICE_API_KEY",
+  "cache_errors": false,
+
+  "http_listen": ":8443",
+  "http_tls": true, 
+  "http_cert": "/etc/letsencrypt/live/YOURSITE/fullchain.pem",
+  "http_key": "/etc/letsencrypt/live/YOURSITE/privkey.pem",
+  "http_mode": "release",
+
+  "maxmind_username":"MAXMIND_USERNAME",
+  "maxmind_password":"MAXMIND_PASSWORD",
+  "maxmind_url":"https://geoip.maxmind.com/geoip/v2.1/city/",
+
+  "redis_host": "127.0.0.1",
+  "redis_port": 6379,
+  "redis_password":"YOUR_REDIS_PASSWORD",
+  "redis_database": "0",
+  "redis_cache_time": 24
+
+}
+
