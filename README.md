@@ -52,3 +52,15 @@ curl -H 'API_KEY: YOUR_PROXY_SERVICE_API_KEY' https://your.site:8444/8.8.8.8
 
 The proxy will return either a cached or non-cached version of JSON from Maxmind. 
 
+
+Prebuild Maxmind-API-Proxy binaries
+-----------------------------------
+
+If you are unable to access a Golang compiler, you can download pre-built/pre-compiled binaries. These binaries are available for various architectures (i386, amd64, arm64, etc) and multiple operating systems (Linux, Solaris, NetBSD, etc).
+
+You can find those binaries at: https://github.com/k9io/k9-binaries/tree/main/maxmind-api-proxy
+
+You will need a copy of the 'maxmind-api-proxy' configuation file.  That is located at:
+
+https://github.com/k9io/maxmind-api-proxy/blob/main/etc/config.json
+
