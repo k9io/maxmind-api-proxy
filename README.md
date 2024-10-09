@@ -1,4 +1,5 @@
 # maxmind-api-proxy
+
 The "maxmind-api-proxy" is a small Golang program that acts as a "proxy" between a "client" and the Maxmind GeoIP
 API (https://www.maxmind.com/en/solutions/ip-geolocation-databases-api-services).
 
@@ -7,7 +8,8 @@ As requests are made to the "proxy", results are stored (cached) to a Redis data
 
 The idea is to query Maxmind less,  thus saving you money on queries. 
 
-# Configuring the "maxmind-api-proxy"
+Configuring the "maxmind-api-proxy"
+-----------------------------------
 
 In the "etc" directory is the "config.json" file.  This holds the settings that are used by the proxy.  
 
@@ -34,8 +36,8 @@ In the "etc" directory is the "config.json" file.  This holds the settings that 
 }
 </pre>
 
-
-# Building "maxmind-api-proxy" and executing the proxy
+Building "maxmind-api-proxy" and executing the proxy
+----------------------------------------------------
 
 <pre>
 $ go mod init maxmind-api-proxy
@@ -44,7 +46,8 @@ $ go build
 $ ./maxmind-api-proxy etc/config.json   # Running the proxy
 </pre>
 
-# Example query to the proxy
+Example query to the proxy
+--------------------------
 
 <pre>
 curl -H 'API_KEY: YOUR_PROXY_SERVICE_API_KEY' https://your.site:8444/8.8.8.8
