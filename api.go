@@ -33,7 +33,13 @@ func Authenticate_API() gin.HandlerFunc {
 
 		if api_key != Config.API_Key {
 			c.JSON(http.StatusOK, gin.H{"error": "api authentication failed"})
+
+			if Production == false { 
+
 			log.Printf("[ Total Queries: %v | Cached: %v [%v%%]| Not Cached: %v [%v%%] - Authentication failure.\n", Total, Cached, (Cached/Total)*100, NotCached, (NotCached/Total)*100)
+			
+			}
+
 			c.Abort()
 			return
 		}

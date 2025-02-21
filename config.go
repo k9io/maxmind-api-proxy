@@ -86,8 +86,8 @@ func Load(ConfigFile string) {
 		log.Fatalf("Cannot find 'http_mode' in %s.\n", ConfigFile)
 	}
 
-	if Config.Http_Mode != "release" && Config.Http_Mode != "debug" && Config.Http_Mode != "test" {
-		log.Fatalf("Invalid 'http_mode' :  %s.  Valid 'http_modes' are 'release', 'debug' and 'test'\n", Config.Http_Mode)
+	if Config.Http_Mode != "release" && Config.Http_Mode != "debug" && Config.Http_Mode != "test" && Config.Http_Mode != "production" {
+		log.Fatalf("Invalid 'http_mode' :  %s.  Valid 'http_modes' are 'release', 'debug', 'test' and 'production'\n", Config.Http_Mode)
 	}
 
 	if Config.Maxmind_Username == "" {

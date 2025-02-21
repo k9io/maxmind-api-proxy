@@ -90,7 +90,11 @@ func Maxmind_Query_IP(c *gin.Context) {
 
 	}
 
+	if Production == false { 
+
 	log.Printf("[ Total Queries: %v | Cached: %v [%v%%]| Not Cached: %v [%v%%] - %s\n", Total, Cached, (Cached/Total)*100, NotCached, (NotCached/Total)*100, results)
+
+	}
 
 	c.String(http.StatusOK, string(body))
 

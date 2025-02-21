@@ -1,5 +1,5 @@
 /*
-** Copyright (C) 2023-2024 - Champ Clark III <cclark _AT_ k9.io>
+** Copyright (C) 2023-2025 - Champ Clark III <cclark _AT_ k9.io>
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License Version 2 as
@@ -20,11 +20,14 @@
 package main
 
 import (
+	"io/ioutil"
 	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
 )
+
+var Production bool = false
 
 func main() {
 
@@ -44,7 +47,21 @@ func main() {
 
 	log.Printf("Setting gin to \"%s\" mode.\n", Config.Http_Mode)
 
-	gin.SetMode(Config.Http_Mode)
+	/* "debug" and "release" mode == normal gin stuff.  "production" discards
+	   all logging */
+
+	if Config.Http_Mode == "production" {
+
+		log.Printf("Suppressing Logging.\n")
+		gin.SetMode("release")
+		gin.DefaultWriter = ioutil.Discard
+		Production = true
+
+	} else {
+
+		gin.SetMode(Config.Http_Mode)
+
+	}
 
 	router := gin.Default()
 
